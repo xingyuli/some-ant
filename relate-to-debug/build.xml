@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<project name="relate-to-debug" default="example">
+
+    <target name="example">
+
+<!-- echo to a file -->		
+<echo file="find.sh" append="false">#!/bin/bash
+find . -name *.xml exec grep "PLACEHOLDER" {} \;
+</echo>
+
+        <echoproperties>
+		    <propertyset>
+			    <propertyref prefix="ant."/>
+			</propertyset>
+		</echoproperties>
+
+	</target>
+
+</project>

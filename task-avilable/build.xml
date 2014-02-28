@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<project name="task-available" default="example">
+
+    <target name="example">
+
+	    <available file="build.properties" property="customized.configuration.present"/>
+		<echo message="customized.configuration.present: ${customized.configuration.present}"/>
+
+		<available file="${basedir}/lib" property="lib.present"/>
+		<echo message="lib.present: ${lib.present}"/>
+
+	</target>
+
+</project>

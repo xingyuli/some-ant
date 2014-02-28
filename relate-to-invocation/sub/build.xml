@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<project name="sub" default="sub-example">
+
+    <property name="dist.dir" value="${basedir}/dist"/>
+
+    <target name="sub-example">
+	    <echo message="basedir: ${basedir}"/>
+	    <echo message="accessing property set by parent: ${top.greeting}"/>
+		<echo message="accessing property overriden by parent: ${dist.dir}"/>
+	</target>
+	
+</project>

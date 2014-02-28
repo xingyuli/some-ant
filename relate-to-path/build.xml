@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<project name="relate-to-path" default="example">
+
+    <target name="example">
+		<basename property="cmdname" file="C:/java/jdk7/bin/javac.exe" suffix=".exe"/>
+		<echo message="cmdname: ${cmdname}"/>
+	</target>
+
+</project>

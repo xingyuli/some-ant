@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<project name="task-condition" default="example">
+
+    <target name="example">
+		<!--
+		    Sets a property if a certain condition holds true - this is a
+			generalization of Available and Uptodate.
+			
+			All conditions to test are specified as nested elements, for a
+			complete list see:
+			http://ant.apache.org/manual/Tasks/conditions.html
+		-->
+		<condition property="isTemplateExist" else="false">
+		    <or>
+			    <available file="tmpl.conf"/>
+				<available file="template.conf"/>
+			</or>
+		</condition>
+		<echo message="isTemplateExist: ${isTemplateExist}"/>
+	</target>
+
+</project>

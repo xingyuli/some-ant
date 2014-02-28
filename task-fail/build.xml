@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="task-fail" default="example">
+
+	<target name="example">
+		<fail message="swith must be set" unless="switch"/>
+	</target>
+
+</project>

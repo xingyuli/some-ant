@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project name="relate-to-invocation" default="parent-example">
+
+	<property name="top.greeting" value="Hello Guys!"/>
+	
+	<target name="parent-example">
+		<!--
+		    Call another target within the same buildfile optionally specifying
+			some properties (params in this context).
+		-->
+		<antcall target="print-start">
+		    <param name="start" value="PARENT EXAMPLE"/>
+		</antcall>
+		
+		<echo message="running in ${basedir}"/>
+		<!--
+		    Runs Apache Ant on a supplied buildfile. This can be used to build
+			subprojects.
+		-->
+		<ant dir="sub">
+		    <property name="dist.dir" value="modified by parent"/>
+		</ant>
+		
+		<!-- use a macro instead of a target to print out the end banner -->
+		<print-end end="PARENT EXAMPLE"/>
+	</target>
+
+	<target name="print-start">
+	    <echo message="----------- ${start} START -----------"/>
+	</target>
+	<macrodef name="print-end">
+	    <attribute name="end"/>
+		<sequential>
+		    <echo message="----------- @{end} END -----------"/>
+		</sequential>
+	</macrodef>
+	
+</project>

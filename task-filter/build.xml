@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="task-filter" basedir="." default="example">
+
+	<target name="example">
+		<!--
+		    Sets a token filter for this project or read multiple token
+		    filter from an input file and sets these as filters. Token
+		    filters are used by all tasks that perform file copying
+		    operations through the Project commodity methods.
+		-->
+		<filter token="product.name" value="${ant.project.name}" />
+		<filter filtersfile="env/my.env"/>
+		<copy todir="dest" filtering="true" overwrite="true">
+			<fileset dir="conf" includes="*.conf" />
+		</copy>
+	</target>
+
+</project>

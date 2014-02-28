@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<project name="task-copy" default="example">
+
+    <target name="example">
+		<copy todir="backup" overwrite="true">
+		    <fileset dir="." includes="*.xml"/>
+			<globmapper from="*" to="*.bak"/>
+		</copy>
+	</target>
+
+</project>
